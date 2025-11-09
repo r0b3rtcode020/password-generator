@@ -58,7 +58,7 @@
 
 body {
   font-family: var(--ff-jetbrains-mono);
-  font-size: var(--fs-16);
+  font-size: clamp(var(--fs-16), 3vw, var(--fs-18));
   font-weight: var(--fw-bold);
   line-height: var(--lh-130);
   background-color: var(--clr-gray-950);
