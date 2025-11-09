@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf");
+}
+
+:root {
+  /* Colors */
+  --clr-green-200: #a4ffaf;
+  --clr-red-500: #f64a4a;
+  --clr-orange-400: #fb7c58;
+  --clr-yellow-300: #f8cd65;
+  --clr-gray-200: #e6e5ea;
+  --clr-gray-600: #817d92;
+  --clr-gray-700: #54535b;
+  --clr-gray-800: #24232c;
+  --clr-gray-850: #18171f;
+  --clr-gray-900: #14131b;
+  --clr-gray-950: #08070b;
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+
+  /* Font */
+  --ff-jetbrains-mono: "JetBrains Mono", monospace;
+
+  /* Font Size */
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-24: 1.5rem;
+  --fs-32: 2rem;
+
+  /* Font Weight */
+  --fw-bold: 700;
+
+  /* Line Height */
+  --lh-130: 1.3;
+
+  /* Spacing */
+  --sp-8: 0.5rem;
+  --sp-16: 1rem;
+  --sp-24: 1.5rem;
+  --sp-32: 2rem;
+  --sp-56: 3.5rem;
+  --sp-80: 5rem;
+  --sp-104: 6.5rem;
+  --sp-128: 8rem;
+  --sp-160: 10rem;
+  --sp-176: 11rem;
+  --sp-184: 11.5rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-jetbrains-mono);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-130);
+  background-color: var(--clr-gray-950);
+  color: var(--clr-gray-200);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input {
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
