@@ -26,7 +26,7 @@
     text-transform: uppercase;
     background-color: var(--clr-green-200);
     color: var(--clr-gray-800);
-    border: 2px solid var(--clr-green-200);
+    border: 0.125rem solid var(--clr-green-200);
     cursor: pointer;
   }
 
