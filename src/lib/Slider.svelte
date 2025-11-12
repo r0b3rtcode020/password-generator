@@ -1,7 +1,7 @@
 <script>
   const MIN = 8;
   const MAX = 20;
-  let length = $state(8);
+  let { length = $bindable() } = $props();
   let percent = $derived(((length - MIN) / (MAX - MIN)) * 100);
 </script>
 
