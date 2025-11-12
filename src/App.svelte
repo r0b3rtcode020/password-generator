@@ -14,6 +14,7 @@
     justify-content: center;
     align-items: center;
     gap: clamp(var(--sp-16), 4.25vw, var(--sp-32));
+    padding-block: clamp(var(--sp-56), 10vw, var(--sp-128));
     padding-inline: clamp(var(--sp-16), 4.25vw, var(--sp-32));
     min-height: 100dvh;
   }
