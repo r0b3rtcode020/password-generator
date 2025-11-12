@@ -4,19 +4,79 @@
   import Checkbox from "./Checkbox.svelte";
   import Strength from "./Strength.svelte";
   import Button from "./Button.svelte";
+
+  let lenght = $state(8);
+  let options = $state([
+    {
+      id: "uppercase",
+      label: "Include Uppercase Letters",
+      checked: false,
+    },
+    {
+      id: "lowercase",
+      label: "Include Lowercase Letters",
+      checked: false,
+    },
+    {
+      id: "numbers",
+      label: "Include Numbers",
+      checked: false,
+    },
+    {
+      id: "symbols",
+      label: "Include Symbols",
+      checked: false,
+    },
+  ]);
 </script>
 
 <div class="generator">
   <Password />
   <div class="generator__options">
-    <Slider />
+    <Slider bind:length={lenght} />
     <div class="checkboxes">
-      <Checkbox />
-      <Checkbox />
-      <Checkbox />
-      <Checkbox />
+      {#each options as option (option.id)}
+        <Checkbox id={option.id} label={option.label} bind:checked={option.checked} />
+      {/each}
     </div>
-    <Strength />
-    <Button />
+    <div class="generator__actions">
+      <Strength />
+      <Button onClick={() => alert("Generando contraseña...")} />
+    </div>
   </div>
 </div>
+
+<style>
+  .generator {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(var(--sp-16), 3.5vw, var(--sp-24));
+    width: 100%;
+    max-width: 33.75rem;
+  }
+
+  .generator__options {
+    background-color: var(--clr-gray-800);
+    padding-block-end: clamp(
+      0rem,
+      calc(0rem + (16 - 0) * ((100vw - 375px) / (768 - 375))),
+      var(--sp-16)
+    );
+  }
+
+  .checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-16);
+    padding-block: var(--sp-16);
+    padding-inline: calc(clamp(var(--sp-16), 4.25vw, var(--sp-32)) + 0.125rem);
+  }
+
+  .generator__actions {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(var(--sp-16), 4.25vw, var(--sp-32));
+    padding-block: var(--sp-16);
+    padding-inline: clamp(var(--sp-16), 4.25vw, var(--sp-32));
+  }
+</style>
