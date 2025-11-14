@@ -46,6 +46,7 @@
 
   .placeholder {
     color: var(--clr-gray-700);
+    user-select: none;
   }
 
   .password button {
