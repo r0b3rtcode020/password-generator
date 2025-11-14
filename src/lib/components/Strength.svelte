@@ -1,5 +1,5 @@
 <script>
-  let { strength = 1 } = $props();
+  let { strength = 0 } = $props();
 
   let strengthText = $derived(["Too Weak!", "Weak", "Medium", "Strong"][strength - 1] || "");
 
