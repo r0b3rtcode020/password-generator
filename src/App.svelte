@@ -1,5 +1,5 @@
 <script>
-  import Generator from "./lib/Generator.svelte";
+  import Generator from "./lib/components/Generator.svelte";
 </script>
 
 <main>

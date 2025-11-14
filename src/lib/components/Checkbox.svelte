@@ -66,7 +66,7 @@
     transform: translateY(-50%);
     width: 0.875rem;
     height: 0.875rem;
-    background-image: url("../assets/icon-check.svg");
+    background-image: url("../../assets/icon-check.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
