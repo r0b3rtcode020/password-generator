@@ -1,4 +1,5 @@
 <script>
+  import { generatePassword, evaluateStrength } from "../utils/passwordGenerator.js";
   import Password from "./Password.svelte";
   import Slider from "./Slider.svelte";
   import Checkbox from "./Checkbox.svelte";
@@ -10,7 +11,7 @@
     {
       id: "uppercase",
       label: "Include Uppercase Letters",
-      checked: false,
+      checked: true,
     },
     {
       id: "lowercase",
@@ -28,10 +29,24 @@
       checked: false,
     },
   ]);
+  let password = $state("");
+  let strength = $state(0);
+
+  const generate = () => {
+    const settings = {
+      length: lenght,
+      lower: options.find(option => option.id === "lowercase").checked,
+      upper: options.find(option => option.id === "uppercase").checked,
+      numbers: options.find(option => option.id === "numbers").checked,
+      symbols: options.find(option => option.id === "symbols").checked,
+    };
+    password = generatePassword(settings);
+    strength = evaluateStrength(password);
+  };
 </script>
 
 <div class="generator">
-  <Password />
+  <Password {password} />
   <div class="generator__options">
     <Slider bind:length={lenght} />
     <div class="checkboxes">
@@ -40,8 +55,8 @@
       {/each}
     </div>
     <div class="generator__actions">
-      <Strength />
-      <Button onClick={() => alert("Generando contraseña...")} />
+      <Strength {strength} />
+      <Button onClick={generate} />
     </div>
   </div>
 </div>
