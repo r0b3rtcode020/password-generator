@@ -58,7 +58,8 @@
 
 html,
 body {
-  overscroll-behavior: none;
+  overscroll-behavior-inline: none;
+  background: var(--clr-gray-900);
 }
 
 body {
