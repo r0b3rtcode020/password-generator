@@ -10,13 +10,14 @@ This is a solution to the [Password generator app challenge on Frontend Mentor](
 - CSS
   - Variables
   - Fluid typography/spacing using clamp()
-  - Media queries
 - Flexbox
-- Grid
 - Mobile-first workflow
 - Responsive design
 - JavaScript framework
-  - Svelte
+  - Svelte 5
+- Vite
+- Deployment
+  - GitHub Pages
 
 ## Live site
 
