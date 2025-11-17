@@ -34,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--sp-32);
     padding-block: var(--sp-16);
     padding-inline: clamp(var(--sp-16), 4.25vw, var(--sp-32));
     background-color: var(--clr-gray-800);
@@ -41,7 +42,15 @@
   }
 
   .password p {
+    flex: 1;
     font-size: clamp(var(--fs-24), 4.5vw, var(--fs-32));
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .password p::-webkit-scrollbar {
+    display: none;
   }
 
   .placeholder {
